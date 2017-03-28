@@ -159,6 +159,7 @@ dat<-c(error_c5.0,error_svm,error_nb,error_glm)
 group<-factor(rep(c("c5.0","svm","nb","glm"), each = 10))
 aov.test<-aov(dat ~ group)
 summary(aov.test)
+TukeyHSD(aov.test)
 
 # *****************************************
 # Part 3: Wilcoxon Signed Rank test
@@ -368,8 +369,13 @@ print('Yeast SVM Error %')
 print(error_svm_yeast)
 
 # Compare the performance of the different classifiers using Wilcoxon Signed Rank test (see ?wilcox.test)
-wilcox.test(error_c5.0_iris,error_svm_iris,paired = TRUE)
-wilcox.test(error_c5.0_ecoli,error_svm_ecoli,paired = TRUE)
-wilcox.test(error_c5.0_breast,error_svm_breast,paired = TRUE)
-wilcox.test(error_c5.0_glass,error_svm_glass,paired = TRUE)
-wilcox.test(error_c5.0_yeast,error_svm_yeast,paired = TRUE)
+#Ref:
+#http://www.sthda.com/english/wiki/unpaired-two-samples-wilcoxon-test-in-r
+
+mean_error_c5.0<-c(mean(error_c5.0_iris),mean(error_c5.0_ecoli),
+                   mean(error_c5.0_breast),mean(error_c5.0_glass),
+                   mean(error_c5.0_yeast))
+mean_error_svm<-c(mean(error_svm_iris),mean(error_svm_ecoli),
+                   mean(error_svm_breast),mean(error_svm_glass),
+                   mean(error_svm_yeast))
+wilcox.test(mean_error_c5.0,mean_error_svm,paired = TRUE)
