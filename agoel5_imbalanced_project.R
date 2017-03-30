@@ -27,7 +27,7 @@ library(stats)
 
 # Load the iris data set
 
-iris<-read.csv('E:\\NCSU\\Semester 2\\Algorithms for Data Guided Business Intelligence\\Homeworks\\Design and Analysis of MLExperiments\\datasets\\Iris_data.txt',header=FALSE,sep = ',')
+iris<-read.csv('./datasets/Iris_data.txt',header=FALSE,sep = ',')
 
 # Randomize the data and perform 10-fold Cross-Validation
 # See ?sample and ?cvFolds
@@ -81,7 +81,7 @@ t.test(error_c5.0,error_svm,paired=TRUE)
 
 # Load the Breast Cancer data set 
 
-breast<-read.csv('E:\\NCSU\\Semester 2\\Algorithms for Data Guided Business Intelligence\\Homeworks\\Design and Analysis of MLExperiments\\datasets\\Wisconsin_Breast_Cancer_data.txt',header=FALSE,sep = ',')
+breast<-read.csv('./datasets/Wisconsin_Breast_Cancer_data.txt',header=FALSE,sep = ',')
 breast<-data.frame(breast[,3:32],breast[,2:2])
 colnames(breast)[31]<-"V33"
 
@@ -168,26 +168,26 @@ TukeyHSD(aov.test)
 # Load the following data sets,
 # 1. Iris 
 
-iris<-read.csv('E:\\NCSU\\Semester 2\\Algorithms for Data Guided Business Intelligence\\Homeworks\\Design and Analysis of MLExperiments\\datasets\\Iris_data.txt',header=FALSE,sep = ',')
+iris<-read.csv('./datasets/Iris_data.txt',header=FALSE,sep = ',')
 
 # 2. Ecoli 
 
-ecoli<-read.csv('E:\\NCSU\\Semester 2\\Algorithms for Data Guided Business Intelligence\\Homeworks\\Design and Analysis of MLExperiments\\datasets\\Ecoli_data.csv',header=FALSE,sep = ',')
+ecoli<-read.csv('./datasets/Ecoli_data.csv',header=FALSE,sep = ',')
 
 # 3. Wisconsin Breast Cancer
 
-breast<-read.csv('E:\\NCSU\\Semester 2\\Algorithms for Data Guided Business Intelligence\\Homeworks\\Design and Analysis of MLExperiments\\datasets\\Wisconsin_Breast_Cancer_data.txt',header=FALSE,sep = ',')
+breast<-read.csv('./datasets/Wisconsin_Breast_Cancer_data.txt',header=FALSE,sep = ',')
 breast<-data.frame(breast[,3:32],breast[,2:2])
 colnames(breast)[31]<-"V33"
 
 # 4. Glass
 
-glass<-read.csv('E:\\NCSU\\Semester 2\\Algorithms for Data Guided Business Intelligence\\Homeworks\\Design and Analysis of MLExperiments\\datasets\\Glass_data.txt',header=FALSE,sep = ',')
+glass<-read.csv('./datasets/Glass_data.txt',header=FALSE,sep = ',')
 glass<-glass[,2:ncol(glass)]
 
 # 5. Yeast
 
-yeast<-read.csv('E:\\NCSU\\Semester 2\\Algorithms for Data Guided Business Intelligence\\Homeworks\\Design and Analysis of MLExperiments\\datasets\\Yeast_data.csv',header=FALSE,sep = ',')
+yeast<-read.csv('./datasets/Yeast_data.csv',header=FALSE,sep = ',')
 
 # Randomize the data and perform 10-fold Cross-Validation
 # See ?sample and ?cvFolds
